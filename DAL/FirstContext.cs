@@ -8,9 +8,19 @@ namespace DAL
 {
    public class FirstContext : DbContext
     {
+        public FirstContext()
+        {
+
+        }
+
+     
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C: \Users\ThinkPad\Source\Repos\First Architect\DB\Database2.mdf';Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Test;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         public DbSet<User> Users { get; set; }
