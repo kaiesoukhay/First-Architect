@@ -10,7 +10,11 @@ namespace DAL
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C: \Users\ThinkPad\Source\Repos\First Architect\DB\Database2.mdf';Integrated Security=True");
+
+           
+
+
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=| DataDirectory |\Data\Test.mdf;Integrated Security=True");
         }
 
         public DbSet<User> Users { get; set; }
