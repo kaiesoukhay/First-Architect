@@ -11,10 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{80CE3275-BD16-4416-AD1E-71DB1519D04E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{9E00535E-1560-46EC-8FB2-0D927E28BF5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{F727F101-C803-4C95-BA1B-1216DE133316}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,16 +29,9 @@ Global
 		{4163FFF1-E0C1-41A6-A057-8257169D68B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4163FFF1-E0C1-41A6-A057-8257169D68B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4163FFF1-E0C1-41A6-A057-8257169D68B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F727F101-C803-4C95-BA1B-1216DE133316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F727F101-C803-4C95-BA1B-1216DE133316}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F727F101-C803-4C95-BA1B-1216DE133316}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F727F101-C803-4C95-BA1B-1216DE133316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{F727F101-C803-4C95-BA1B-1216DE133316} = {9E00535E-1560-46EC-8FB2-0D927E28BF5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20FC79E2-84C5-487D-9010-9BDF1420D6C6}
