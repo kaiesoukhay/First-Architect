@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(FirstContext))]
-    [Migration("20200425155218_CreateSchoolDB")]
-    partial class CreateSchoolDB
+    [Migration("20200502160415_FluentAPiFirst")]
+    partial class FluentAPiFirst
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,9 +20,24 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("DTO.Models.Role", b =>
+                {
+                    b.Property<int>("RoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("RoleName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RoleId");
+
+                    b.ToTable("Role");
+                });
+
             modelBuilder.Entity("DTO.Models.User", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -42,9 +57,21 @@ namespace DAL.Migrations
                     b.Property<int>("RoleID")
                         .HasColumnType("int");
 
-                    b.HasKey("id");
+                    b.HasKey("UserId");
+
+                    b.HasIndex("RoleID")
+                        .IsUnique();
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DTO.Models.User", b =>
+                {
+                    b.HasOne("DTO.Models.Role", "Roles")
+                        .WithOne("Users")
+                        .HasForeignKey("DTO.Models.User", "RoleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
